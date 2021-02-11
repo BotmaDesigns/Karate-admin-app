@@ -118,6 +118,7 @@ h3{font-size:1.3em; text-align:center;}
 .new_student_input{width:90vw; margin:1em 0; height:4em; border-radius:1em; text-align:center; border:none; background-color:#ebebeb;}
 .new_student_date{width:60vw; margin:1em 0; height:4em; border-radius:1em; text-align:center; border:none; background-color:#ebebeb;}
 
+#not{font-weight:bold;}
 
 button[type="submit"] {
     background-color:darkred;

@@ -81,7 +81,7 @@
 		
 		<input type="text" placeholder="e-Mail" class="new_student_input" />
 		
-		<input type="button" value="take photo" style="margin:1em auto auto 37%; padding:0.5em 1em;" />
+		<input type="button" value="take photo" id="cameraTakePicture" style="margin:1em auto auto 37%; padding:0.5em 1em;" />
 		</br>
 		
 		<button type="submit" style="margin-left:25%; margin-top:3em;" onClick="takePhoto()">Add new student</button>
@@ -92,6 +92,23 @@
 	
 </body>
 	<script>
+		document.getElementById("cameraTakePicture").addEventListener("click", cameraTakePicture);
+		   
+		function cameraTakePicture() { 
+   navigator.camera.getPicture(onSuccess, onFail, {  
+      quality: 50, 
+      destinationType: Camera.DestinationType.DATA_URL 
+   });  
+   
+   function onSuccess(imageData) { 
+      var image = document.getElementById('myImage'); 
+      image.src = "data:image/jpeg;base64," + imageData; 
+   }  
+   
+   function onFail(message) { 
+      alert('Failed because: ' + message); 
+   } 
+}
 	</script>
 
 </html>

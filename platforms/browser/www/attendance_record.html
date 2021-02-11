@@ -79,16 +79,16 @@
 				<img src="img/grading/bla.jpg" class="studentGrading"></img>
 			</p>
 			<div id="extra_info" class="hidden">
-			<p>	Affiliation nr: 02545845
-				</br></br>
-				date of birth: 1989/09/17
-				</br></br>
-				Tel: <a href="tel:+27845815152">084 5815 152</a> 
-				</br></br> 
-				email: <a href="mailto:#">email.address@client.co.za</a>
+			<p>	
+				date &emsp; date &emsp; date &emsp; date &emsp; date &emsp; date &emsp; 
+				date &emsp; date &emsp; date &emsp; date &emsp; date &emsp; date &emsp; 
+				date &emsp; date &emsp; 
+			</p>
+			<p style="text-align:center;border-top:solid 1px grey;">
+				</br><span id="not">NOT </span>eligible for grading
 			</p>
 			</div>
-			<a href="javascript:void(0);" class="showText">Show Info</a>
+			<a href="javascript:void(0);" onClick="checkGradingRequirements()" class="showText">Show Info</a>
 		</section>
 
 	</article>
@@ -119,6 +119,15 @@ $(document).on("click", ".showText", function() {
   }
   
 });
+
+function checkGradingRequirements(){
+	var lastGrading = new Date(2019,11,23);
+	var lastLesson = new Date(2020,02,10);
+	
+	if (lastGrading > lastLesson){
+		document.getElementById("not").style.display = "none";
+	}
+}
 	</script>
 
 </html>

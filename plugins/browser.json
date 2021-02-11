@@ -25,6 +25,9 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "co.za.botmadesigns.vryFees"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "co.za.botmadesigns.Karate"
         }
     },
     "dependent_plugins": {}
