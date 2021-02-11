@@ -1,0 +1,156 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    margin:0px;
+    padding:0px;
+    width:100%;
+	background-image:url(../img/background1.jpg);
+	background-size:100% auto;
+}
+
+a {text-decoration:none; color:black;}
+
+header{
+	position:fixed;
+	top:0;
+	width:100%;
+	background-color:white;
+	z-index:101;
+}
+
+article{
+	width:90vw;
+	margin:7em auto 0 auto;
+}
+
+section{
+	background-color:#ebebeb;
+	border-radius:1em;
+	padding:1.5em;
+	margin:1em 0;
+}
+h3{font-size:1.3em; text-align:center;}
+
+/* navigation */
+#menu{
+	margin:1em 0.5em;
+	display:block;
+	font-size:1.8em;
+}
+
+#menuBar{
+	min-height:3em;
+	margin-top:1em;
+}
+
+.showMenu{
+	display:block;
+	text-align:right;
+	background-color:#fff;
+	height:100vh;
+	margin-bottom:0.7em;
+}
+
+.menu a:not(:first-child) {
+	display: none;
+	font-size:0.9em;
+}
+
+.menu.showMenu a{
+	margin-top:-1em;
+	padding:0.7em 1em 0.7em 1em;
+	margin:-0.7em 0 0.7em 0;
+	display:block;
+	float:none;
+
+}
+
+.menuBtn{padding:0 1em; color:#000; float:right;}
+
+.active{background-color:darkred; color:white;}
+
+#logo{margin-left:2em; font-size:1.5em;}
+
+/* end of Navigation */
+
+.student{display:flex; align-items:center; justify-content:flex-start;}
+.student_info{display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-start;}
+.student_info > .studentName{min-width:55%;}
+.student_info_text{line-height:2.5em;}
+.studentName{min-width:45%;}
+.studentGrading{padding:0 1.5em; width:4em; height:4em; object-fit:contain;}
+.studentPhoto{padding-right:1.5em; width:4em; height:4em; object-fit:contain;}
+.studentPresent{width:10%;}
+
+.showText{text-align:center; display:block; width:80vw; color:darkred;}
+.hidden{display: none;}
+#container{width:80vw; flex-wrap:wrap; display:flex;}
+.left:first-child{border:none;}
+.right:nth-child(2){border:none;}
+.left{width:25%; padding:1em 3%; border-top:solid 1px grey;}
+.right{width:60%; padding:1em 2%; font-weight:bold; border-top:solid 1px grey;}
+
+.new_student_input{width:90vw; margin:1em 0; height:4em; border-radius:1em; text-align:center; border:none; background-color:#ebebeb;}
+.new_student_date{width:60vw; margin:1em 0; height:4em; border-radius:1em; text-align:center; border:none; background-color:#ebebeb;}
+
+
+button[type="submit"] {
+    background-color:darkred;
+	color:white;
+	font-size:1.1em;
+	padding:1em 3em;
+	font-weight:bold;
+    border-radius: 1em;
+}
+
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+.clear-fix{clear:both;}
